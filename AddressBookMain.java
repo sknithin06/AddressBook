@@ -1,5 +1,7 @@
 package bridglabz;
 import java.util.*;
+
+import bridgelabz.AddressDetails;
 class AddressDetails {
 	public String FirstName;
 	public String LastName;
@@ -109,5 +111,66 @@ public class AddressBookMain {
 			System.out.println(Item.getid());
 	   }
 
+		System.out.println("\n\n********");
+		System.out.print("Enter your Name to edit:");
+		String editName = sc.nextLine();  
+		for (int counter = 0; counter < details.size(); counter++) {  
+			if (details.get(counter).FirstName.compareToIgnoreCase(editName) == 0) {
+			   
+				int n = sc.nextInt();
+			   switch (n) {
+				case 1:
+					System.out.println("Enter your FirstName to edit:");  
+					details.get(counter).FirstName = sc.nextLine();
+					break;
+				case 2:
+					System.out.println("Enter your LastName to edit:");
+					details.get(counter).LastName = sc.nextLine();
+					break;
+				case 3:
+					System.out.println("Enter your Address to edit:");
+					details.get(counter).Address = sc.nextLine();
+					break;
+				case 4:
+					System.out.println("Enter your City to edit:");
+					details.get(counter).City= sc.nextLine();
+					break;
+				case 5:
+					System.out.println("Enter your State to edit:");
+					details.get(counter).State = sc.nextLine();
+					break;
+				case 6:
+					System.out.println("Enter your Zip to edit:");
+					details.get(counter).Zip = sc.nextLine();
+					break;
+				case 7:
+					System.out.println("Enter your PhoneNum to edit:");
+					details.get(counter).PhoneNum = sc.nextLine();
+					break;
+				case 8:
+					System.out.println("Enter your Email to edit:");
+					details.get(counter).id = sc.nextLine();
+					break;
+				default:
+					System.out.println("invalid input");	
+			   }
+		   }
+		   
+		 }
+	   
+			
+
+	   		
+		for (AddressDetails Item : details) { 	
+			System.out.println("\n********");	      
+			System.out.println(Item.getFirstName());
+			System.out.println(Item.getLastName());
+			System.out.println(Item.getAddress());
+			System.out.println(Item.getCity());
+			System.out.println(Item.getState());
+			System.out.println(Item.getZip());
+			System.out.println(Item.getPhoneNum());	
+			System.out.println(Item.getid());
+	   }
 	}
 }
