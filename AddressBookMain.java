@@ -1,7 +1,6 @@
 package bridglabz;
 import java.util.*;
 
-import bridgelabz.AddressDetails;
 class AddressDetails {
 	public String FirstName;
 	public String LastName;
@@ -98,7 +97,6 @@ public class AddressBookMain {
 		AddressDetails person = new  AddressDetails(FirstName, LastName, Address, State, City, Zip, PhoneNum, id);
 		details.add(person);
 		
-		
 		for (AddressDetails Item : details) { 	
 			System.out.println("\n********");	      
 			System.out.println(Item.getFirstName());
@@ -155,12 +153,7 @@ public class AddressBookMain {
 					System.out.println("invalid input");	
 			   }
 		   }
-		   
 		 }
-	   
-			
-
-	   		
 		for (AddressDetails Item : details) { 	
 			System.out.println("\n********");	      
 			System.out.println(Item.getFirstName());
@@ -172,5 +165,14 @@ public class AddressBookMain {
 			System.out.println(Item.getPhoneNum());	
 			System.out.println(Item.getid());
 	   }
+		
+		System.out.println("Enter a FirstName to deletr the contact:");
+		String DeleteName =  sc.nextLine();
+		for (int counter = 0; counter < details.size(); counter++) {
+			if (details.get(counter).getFirstName().equals(FirstName)) {
+				details.remove(DeleteName);
+			}
+			System.out.println(DeleteName);
+		}
 	}
 }
