@@ -1,6 +1,5 @@
 package bridglabz;
 import java.util.*;
-
 class AddressDetails {
 	public String FirstName;
 	public String LastName;
@@ -72,6 +71,44 @@ class AddressDetails {
 	}	
 }
 public class AddressBookMain {
+	static void multipleContact() {
+		ArrayList<AddressDetails> details = new ArrayList<AddressDetails>();  
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		for(int i = 0; i <= n ; i++){
+			System.out.print("\nEnter your FirstName:");  
+			String FirstName = sc.nextLine();
+			System.out.print("Enter your LastName:");
+			String LastName = sc.nextLine();
+			System.out.print("Enter your Address:");
+			String Address = sc.nextLine();
+			System.out.print("Enter your City:");
+			String City = sc.nextLine();
+			System.out.print("Enter your State:");
+			String State = sc.nextLine();
+			System.out.print("Enter your Zip:");
+			String Zip = sc.nextLine();
+			System.out.print("Enter your PhoneNum:");
+			String PhoneNum = sc.nextLine();
+			System.out.print("Enter your Email:");
+			String id = sc.nextLine();
+		
+			AddressDetails person = new  AddressDetails(FirstName, LastName, Address, State, City, Zip, PhoneNum, id);
+			details.add(person);
+		}
+		for (AddressDetails Item : details) { 	
+			System.out.println("\n********");	      
+			System.out.println(Item.getFirstName());
+			System.out.println(Item.getLastName());
+			System.out.println(Item.getAddress());
+			System.out.println(Item.getCity());
+			System.out.println(Item.getState());
+			System.out.println(Item.getZip());
+			System.out.println(Item.getPhoneNum());	
+			System.out.println(Item.getid());
+	   }
+		
+	}
 	public static void main (String[] args) {
 		System.out.println("Welcome To Address Book Program");
 		ArrayList<AddressDetails> details = new ArrayList<AddressDetails>();  
@@ -166,7 +203,7 @@ public class AddressBookMain {
 			System.out.println(Item.getid());
 	   }
 		
-		System.out.println("Enter a FirstName to deletr the contact:");
+		System.out.println("Enter a FirstName to delete the contact:");
 		String DeleteName =  sc.nextLine();
 		for (int counter = 0; counter < details.size(); counter++) {
 			if (details.get(counter).getFirstName().equals(FirstName)) {
@@ -174,5 +211,7 @@ public class AddressBookMain {
 			}
 			System.out.println(DeleteName);
 		}
+		AddressBookMain Contacts = new AddressBookMain();
+		Contacts.multipleContact();
 	}
 }
