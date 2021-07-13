@@ -107,7 +107,12 @@ public class AddressBookMain {
 			System.out.println(Item.getPhoneNum());	
 			System.out.println(Item.getid());
 	   }
-		
+	}
+	public String AddressBookName(){
+	    Scanner sc = new Scanner(System.in);
+		System.out.print("enter a name:");
+		String Name = sc.nextLine();
+		return Name;
 	}
 	public static void main (String[] args) {
 		System.out.println("Welcome To Address Book Program");
@@ -213,5 +218,34 @@ public class AddressBookMain {
 		}
 		AddressBookMain Contacts = new AddressBookMain();
 		Contacts.multipleContact();
+		
+		
+		System.out.print("Enter number of contact :");  
+		int contact = sc.nextInt();
+		AddressBookMain newContacts =new AddressBookMain();
+		Map<String, List<String>> map1 = new HashMap<String, List<String>>();
+		for (int i = 0; i < contact; i++) {	
+			String AddressName = newContacts.AddressBookName();
+			
+			System.out.print("Enter your FirstName:");  
+			String firstName = sc.nextLine();
+			System.out.print("Enter your LastName:");
+			String lastName = sc.nextLine();
+			System.out.print("Enter your Address:");
+			String address = sc.nextLine();
+			System.out.print("Enter your City:");
+			String city = sc.nextLine();
+			System.out.print("Enter your State:");
+			String state = sc.nextLine();
+			System.out.print("Enter your Zip:");
+			String zip = sc.nextLine();
+			System.out.print("Enter your PhoneNum:");
+			String phoneNum = sc.nextLine();
+			System.out.print("Enter your Emailid:");
+			String Id = sc.nextLine();
+			map1.put( AddressName,Arrays.asList(firstName, lastName, address, city, state,
+				zip, phoneNum, Id));
+		}
+		System.out.println("output is"+map1); 
 	}
 }
